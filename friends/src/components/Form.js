@@ -2,7 +2,7 @@ import React from 'react';
 
 const Form = () => {
 
-    if(isLoading)
+    // if(isLoading)
     return (
         <>
         <form>
