@@ -1,15 +1,24 @@
 import React from 'react';
 
 const Form = () => {
+
+    if(isLoading)
     return (
         <>
         <form>
             <input
             type='text'
-            value=''
-            placeholder='insert information'
+            // value=''
+            placeholder='name'
             >
             </input>
+            <input
+            type='text'
+            // value=''
+            placeholder='password'
+            >
+            </input>
+            <button type='submit'>Log in</button>
         </form>
         </>
     )
