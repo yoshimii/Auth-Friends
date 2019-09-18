@@ -3,13 +3,12 @@ import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 const LoginForm = (props) => {
 
-const [ creds, setCreds] = useState( { username: '',
-    password: ''})
+const [ creds, setCreds] = useState({ username: '', password: '' })
    
 
     const handleChange = e => {
         e.preventDefault();
-        setCreds({...creds,  [e.target.name]: e.target.value});
+        setCreds({ ...creds,  [e.target.name]: e.target.value });
         console.log(e.target.name)
     }
 
