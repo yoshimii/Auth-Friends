@@ -23,7 +23,7 @@ const FriendsList = () => {
         <div>   
             <FriendForm />
             {friends.map((item) => {
-               return <Friend name={item.name} age={item.age} email={item.email} key={item.id}/>
+               return <Friend name={item.name} age={item.age} email={item.email} key={item.id} state={friends}/>
             })}
         </div>
 
