@@ -6,6 +6,7 @@ import LoginForm from './components/LoginForm';
 import Home from './components/Home';
 import PrivateRoute from './components/PrivateRoute';
 import './App.css';
+import FriendForm from './components/FriendForm';
 
 function App() {
   return (
@@ -13,11 +14,9 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Link to='/login'>login</Link>
-        <Link to='/register'>register</Link>
-        <PrivateRoute exact path='/friends' 
-        // render={(props) => {return (<FriendsList {...props}/>)}}
-        component={FriendsList}    
-        />
+        {/* <Link to='/addfriend'>add friend</Link> */}
+        <PrivateRoute exact path='/friends'component={FriendsList} />
+        <PrivateRoute exat path='/addfriend' component={FriendForm} />
         <Route exact path='/login' render={(props) => {return (<LoginForm {...props}/>)}} />
         <Route exact path='/' render={(props) => {return (<Home {...props}/>)}} />
         

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { axiosWithAuth } from '../utils/axiosWithAuth';
+import { withRouter } from 'react-router-dom';
 
-const FriendForm = () => {
+const FriendForm = (props) => {
     const [ newFriend, setFriend ] = useState({ name: '', age: '', email: '' });
 
 
@@ -14,9 +15,12 @@ const FriendForm = () => {
     const addFriend = e => {
         e.preventDefault();
         axiosWithAuth()
-        .post('friends', newFriend )
+        .post('/friends', newFriend )
         .then(res => {
-            console.log(res)
+            props.history.push('/friends')
+        })
+        .catch(err => {
+            console.log(err)
         })
 
     }
@@ -53,4 +57,4 @@ const FriendForm = () => {
     )
 }
 
-export default FriendForm;
+export default withRouter(FriendForm);
